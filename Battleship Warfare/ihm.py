@@ -114,7 +114,7 @@ def switch(frame):
 
 # Écran de démarage
 img_Start_Screen_Source = Image.open("gui/image/Screen/Start_Screen.png")
-img_Start_Screen = ImageTk.PhotoImage(img_Start_Screen_Source.resize((int((800*globalSize)),int((450*globalSize))), Image.ANTIALIAS))
+img_Start_Screen = ImageTk.PhotoImage(img_Start_Screen_Source.resize((int((800*globalSize)),int((450*globalSize))), Image.Resampling.LANCZOS))
 
 # Titre du menu
 img_Title_Source = Image.open("gui/image/Title.png")
@@ -139,30 +139,30 @@ img_D_Source = Image.open("gui/image/Status/D.png")
 def refreshIMG():
     if page == startPage: # Affichage uniquement quand nécaissaire par soucis de performance
         global img_Start_Screen # Écran de démarage
-        img_Start_Screen = ImageTk.PhotoImage(img_Start_Screen_Source.resize((int((800*globalSize)),int((450*globalSize))), Image.ANTIALIAS))
+        img_Start_Screen = ImageTk.PhotoImage(img_Start_Screen_Source.resize((int((800*globalSize)),int((450*globalSize))), Image.Resampling.LANCZOS))
 
     if page == partyPage or page == prePartyPage: # Affichage uniquement quand nécaissaire par soucis de performance
 
         global img_X
-        img_X = ImageTk.PhotoImage(img_X_Source.resize((int((200//7*globalSize)/(d.mapSize/10)),int((200//7*globalSize)/(d.mapSize/10))), Image.ANTIALIAS))
+        img_X = ImageTk.PhotoImage(img_X_Source.resize((int((200//7*globalSize)/(d.mapSize/10)),int((200//7*globalSize)/(d.mapSize/10))), Image.Resampling.LANCZOS))
         global img_D
-        img_D = ImageTk.PhotoImage(img_D_Source.resize((int((200//7*globalSize)/(d.mapSize/10)),int((200//7*globalSize)/(d.mapSize/10))), Image.ANTIALIAS))
+        img_D = ImageTk.PhotoImage(img_D_Source.resize((int((200//7*globalSize)/(d.mapSize/10)),int((200//7*globalSize)/(d.mapSize/10))), Image.Resampling.LANCZOS))
 
         # Porte avion
         global img_Aboat_N; global img_Aboat_E; global img_Aboat_S; global img_Aboat_W
-        img_Aboat_N = ImageTk.PhotoImage(img_Aboat_N_Source.resize((int((200//7*globalSize)/(d.mapSize/10)),int((1000//7*globalSize)/(d.mapSize/10))), Image.ANTIALIAS)); img_Aboat_E = ImageTk.PhotoImage(img_Aboat_E_Source.resize((int((1000/7*globalSize)/(d.mapSize/10)),int((200/7*globalSize)/(d.mapSize/10))), Image.ANTIALIAS)); img_Aboat_S = ImageTk.PhotoImage(img_Aboat_S_Source.resize((int((200//7*globalSize)/(d.mapSize/10)),int((1000//7*globalSize)/(d.mapSize/10))), Image.ANTIALIAS)); img_Aboat_W = ImageTk.PhotoImage(img_Aboat_W_Source.resize((int((1000//7*globalSize)/(d.mapSize/10)),int((200//7*globalSize)/(d.mapSize/10))), Image.ANTIALIAS))    
+        img_Aboat_N = ImageTk.PhotoImage(img_Aboat_N_Source.resize((int((200//7*globalSize)/(d.mapSize/10)),int((1000//7*globalSize)/(d.mapSize/10))), Image.Resampling.LANCZOS)); img_Aboat_E = ImageTk.PhotoImage(img_Aboat_E_Source.resize((int((1000/7*globalSize)/(d.mapSize/10)),int((200/7*globalSize)/(d.mapSize/10))), Image.Resampling.LANCZOS)); img_Aboat_S = ImageTk.PhotoImage(img_Aboat_S_Source.resize((int((200//7*globalSize)/(d.mapSize/10)),int((1000//7*globalSize)/(d.mapSize/10))), Image.Resampling.LANCZOS)); img_Aboat_W = ImageTk.PhotoImage(img_Aboat_W_Source.resize((int((1000//7*globalSize)/(d.mapSize/10)),int((200//7*globalSize)/(d.mapSize/10))), Image.Resampling.LANCZOS))    
         # Cuirrasé 
         global img_Cboat_N; global img_Cboat_E ;global img_Cboat_S; global img_Cboat_W
-        img_Cboat_N = ImageTk.PhotoImage(img_Cboat_N_Source.resize((int((200//7*globalSize)/(d.mapSize/10)),int((800//7*globalSize)/(d.mapSize/10))), Image.ANTIALIAS)); img_Cboat_E = ImageTk.PhotoImage(img_Cboat_E_Source.resize((int((800//7*globalSize)/(d.mapSize/10)),int((200//7*globalSize)/(d.mapSize/10))), Image.ANTIALIAS)); img_Cboat_S = ImageTk.PhotoImage(img_Cboat_S_Source.resize((int((200//7*globalSize)/(d.mapSize/10)),int((800//7*globalSize)/(d.mapSize/10))), Image.ANTIALIAS)); img_Cboat_W = ImageTk.PhotoImage(img_Cboat_W_Source.resize((int((800//7*globalSize)/(d.mapSize/10)),int((200//7*globalSize)/(d.mapSize/10))), Image.ANTIALIAS))    
+        img_Cboat_N = ImageTk.PhotoImage(img_Cboat_N_Source.resize((int((200//7*globalSize)/(d.mapSize/10)),int((800//7*globalSize)/(d.mapSize/10))), Image.Resampling.LANCZOS)); img_Cboat_E = ImageTk.PhotoImage(img_Cboat_E_Source.resize((int((800//7*globalSize)/(d.mapSize/10)),int((200//7*globalSize)/(d.mapSize/10))), Image.Resampling.LANCZOS)); img_Cboat_S = ImageTk.PhotoImage(img_Cboat_S_Source.resize((int((200//7*globalSize)/(d.mapSize/10)),int((800//7*globalSize)/(d.mapSize/10))), Image.Resampling.LANCZOS)); img_Cboat_W = ImageTk.PhotoImage(img_Cboat_W_Source.resize((int((800//7*globalSize)/(d.mapSize/10)),int((200//7*globalSize)/(d.mapSize/10))), Image.Resampling.LANCZOS))    
         # Frégate
         global img_Fboat_N; global img_Fboat_E; global img_Fboat_S; global img_Fboat_W
-        img_Fboat_N = ImageTk.PhotoImage(img_Fboat_N_Source.resize((int((200//7*globalSize)/(d.mapSize/10)),int((600//7*globalSize)/(d.mapSize/10))), Image.ANTIALIAS)); img_Fboat_E = ImageTk.PhotoImage(img_Fboat_E_Source.resize((int((600//7*globalSize)/(d.mapSize/10)),int((200//7*globalSize)/(d.mapSize/10))), Image.ANTIALIAS)); img_Fboat_S = ImageTk.PhotoImage(img_Fboat_S_Source.resize((int((200//7*globalSize)/(d.mapSize/10)),int((600//7*globalSize)/(d.mapSize/10))), Image.ANTIALIAS)); img_Fboat_W = ImageTk.PhotoImage(img_Fboat_W_Source.resize((int((600//7*globalSize)/(d.mapSize/10)),int((200//7*globalSize)/(d.mapSize/10))), Image.ANTIALIAS))    
+        img_Fboat_N = ImageTk.PhotoImage(img_Fboat_N_Source.resize((int((200//7*globalSize)/(d.mapSize/10)),int((600//7*globalSize)/(d.mapSize/10))), Image.Resampling.LANCZOS)); img_Fboat_E = ImageTk.PhotoImage(img_Fboat_E_Source.resize((int((600//7*globalSize)/(d.mapSize/10)),int((200//7*globalSize)/(d.mapSize/10))), Image.Resampling.LANCZOS)); img_Fboat_S = ImageTk.PhotoImage(img_Fboat_S_Source.resize((int((200//7*globalSize)/(d.mapSize/10)),int((600//7*globalSize)/(d.mapSize/10))), Image.Resampling.LANCZOS)); img_Fboat_W = ImageTk.PhotoImage(img_Fboat_W_Source.resize((int((600//7*globalSize)/(d.mapSize/10)),int((200//7*globalSize)/(d.mapSize/10))), Image.Resampling.LANCZOS))    
         # Sous-marin
         global img_Sboat_N; global img_Sboat_E; global img_Sboat_S; global img_Sboat_W
-        img_Sboat_N = ImageTk.PhotoImage(img_Sboat_N_Source.resize((int((200//7*globalSize)/(d.mapSize/10)),int((600//7*globalSize)/(d.mapSize/10))), Image.ANTIALIAS)); img_Sboat_E = ImageTk.PhotoImage(img_Sboat_E_Source.resize((int((600//7*globalSize)/(d.mapSize/10)),int((200//7*globalSize)/(d.mapSize/10))), Image.ANTIALIAS)); img_Sboat_S = ImageTk.PhotoImage(img_Sboat_S_Source.resize((int((200//7*globalSize)/(d.mapSize/10)),int((600//7*globalSize)/(d.mapSize/10))), Image.ANTIALIAS)); img_Sboat_W = ImageTk.PhotoImage(img_Sboat_W_Source.resize((int((600//7*globalSize)/(d.mapSize/10)),int((200//7*globalSize)/(d.mapSize/10))), Image.ANTIALIAS))
+        img_Sboat_N = ImageTk.PhotoImage(img_Sboat_N_Source.resize((int((200//7*globalSize)/(d.mapSize/10)),int((600//7*globalSize)/(d.mapSize/10))), Image.Resampling.LANCZOS)); img_Sboat_E = ImageTk.PhotoImage(img_Sboat_E_Source.resize((int((600//7*globalSize)/(d.mapSize/10)),int((200//7*globalSize)/(d.mapSize/10))), Image.Resampling.LANCZOS)); img_Sboat_S = ImageTk.PhotoImage(img_Sboat_S_Source.resize((int((200//7*globalSize)/(d.mapSize/10)),int((600//7*globalSize)/(d.mapSize/10))), Image.Resampling.LANCZOS)); img_Sboat_W = ImageTk.PhotoImage(img_Sboat_W_Source.resize((int((600//7*globalSize)/(d.mapSize/10)),int((200//7*globalSize)/(d.mapSize/10))), Image.Resampling.LANCZOS))
         # Patrouilleur
         global img_Pboat_N; global img_Pboat_E; global img_Pboat_S; global img_Pboat_W
-        img_Pboat_N = ImageTk.PhotoImage(img_Pboat_N_Source.resize((int((200//7*globalSize)/(d.mapSize/10)),int((400//7*globalSize)/(d.mapSize/10))), Image.ANTIALIAS)); img_Pboat_E = ImageTk.PhotoImage(img_Pboat_E_Source.resize((int((400//7*globalSize)/(d.mapSize/10)),int((200//7*globalSize)/(d.mapSize/10))), Image.ANTIALIAS)); img_Pboat_S = ImageTk.PhotoImage(img_Pboat_S_Source.resize((int((200//7*globalSize)/(d.mapSize/10)),int((400//7*globalSize)/(d.mapSize/10))), Image.ANTIALIAS)); img_Pboat_W = ImageTk.PhotoImage(img_Pboat_W_Source.resize((int((400//7*globalSize)/(d.mapSize/10)),int((200//7*globalSize)/(d.mapSize/10))), Image.ANTIALIAS))
+        img_Pboat_N = ImageTk.PhotoImage(img_Pboat_N_Source.resize((int((200//7*globalSize)/(d.mapSize/10)),int((400//7*globalSize)/(d.mapSize/10))), Image.Resampling.LANCZOS)); img_Pboat_E = ImageTk.PhotoImage(img_Pboat_E_Source.resize((int((400//7*globalSize)/(d.mapSize/10)),int((200//7*globalSize)/(d.mapSize/10))), Image.Resampling.LANCZOS)); img_Pboat_S = ImageTk.PhotoImage(img_Pboat_S_Source.resize((int((200//7*globalSize)/(d.mapSize/10)),int((400//7*globalSize)/(d.mapSize/10))), Image.Resampling.LANCZOS)); img_Pboat_W = ImageTk.PhotoImage(img_Pboat_W_Source.resize((int((400//7*globalSize)/(d.mapSize/10)),int((200//7*globalSize)/(d.mapSize/10))), Image.Resampling.LANCZOS))
 
 #  --- Trouveur de l'image correspondante à un type de bateau et sa direction
 def finfBoatImg(type,direction):
@@ -469,7 +469,7 @@ def refreshGUI():
             mainMenuPage.delete("all")
             text_gameTitle.destroy()
             global img_Title # Titre
-            img_Title = ImageTk.PhotoImage(img_Title_Source.resize((int((1080//2*globalSize)),int((300//2*globalSize))), Image.ANTIALIAS))
+            img_Title = ImageTk.PhotoImage(img_Title_Source.resize((int((1080//2*globalSize)),int((300//2*globalSize))), Image.Resampling.LANCZOS))
             mainMenuPage.create_image(app.winfo_width()//2,app.winfo_height()//3,image=img_Title)
         else:
             text_gameTitle.place(relx = 0.5, rely = 0.45, anchor = S)
